@@ -9,19 +9,19 @@ using namespace std;
 
 struct Node{
     int v; //v:邻接边的目标顶点
-    int dis; //d: 边权
+    int dis; //dis: 边权
     Node(int _v, int _dis) : v(_v), dis(_dis) {} 
 };
 
 const int MAXN = 510;
 const int INF = 999999999;
-vector<Node> G[MAXN];
-int dis[MAXN];
-int num[MAXN];
-set<int> pre[MAXN];
+vector<Node> G[MAXN];   // 邻接矩阵
+int dis[MAXN];          // 储存到每个顶点的最短路径
+int num[MAXN];          // 到每个顶点有多少条最短路径
+set<int> pre[MAXN];     // 储存顶点的前节点
 
-int teams[MAXN];
-int maxTeams[MAXN];
+int teams[MAXN];        // 每个顶点的救援队数量
+int maxTeams[MAXN];     // 到每个顶点最短路径的最大救援队数量
 void Bellman(int N){
     for(int i=0; i<N-1; i++){
         for(int u=0; u<N; u++){
@@ -71,7 +71,7 @@ int main(){
     memset(maxTeams, 0, sizeof(maxTeams));
     dis[C1] = 0;
     num[C1] = 1;
-    maxTeams[C1] = teams[C1];
+    maxTeams[C1] = teams[C1];   // 也可以在Bellman函数内初始化，对于多点测试比较方便
     Bellman(N);
     
     printf("%d %d", num[C2], maxTeams[C2]);
