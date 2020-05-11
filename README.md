@@ -1,4 +1,4 @@
-# PAT && leetcode 刷题笔记
+# PAT && leetcode 刷题记录
 
 2020-05-10 更新：
 
