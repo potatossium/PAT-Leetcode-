@@ -9,12 +9,12 @@ using namespace std;
     const int INF = 1000000000;
 
     //int G[MAXN][MAXN] = {INF};
-    int G[MAXN][MAXN];
-    int dis[MAXN]; // 保存最小路径
-    int teams[MAXN];
-    bool vis[MAXN] = {false};
-    int num[MAXN];
-    int maxTeams[MAXN];
+    int G[MAXN][MAXN];          // 邻接矩阵
+    int dis[MAXN];              // 保存最小路径
+    int teams[MAXN];            // teams[i]第i个城市救援队数量
+    bool vis[MAXN] = {false};   // 是否访问过
+    int num[MAXN];              // i节点的最短路径数量
+    int maxTeams[MAXN];         // i节点最短路径的最大救援数量
 
     void searching(int C1, int C2, int N){
         
