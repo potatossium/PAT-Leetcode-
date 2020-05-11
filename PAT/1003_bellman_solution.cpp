@@ -22,7 +22,8 @@ set<int> pre[MAXN];     // 储存顶点的前节点
 
 int teams[MAXN];        // 每个顶点的救援队数量
 int maxTeams[MAXN];     // 到每个顶点最短路径的最大救援队数量
-void Bellman(int N){
+
+void Bellman(int N){    //Bellman-Ford算法，适用于负边权情况，但比Dijkstra算法慢
     for(int i=0; i<N-1; i++){
         for(int u=0; u<N; u++){
             for(int j=0; j<G[u].size(); j++){
